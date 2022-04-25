@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+html,body{
+  display: grid;
+  height: 100%;
+  width: 100%;
+
+  place-items: center;
+  text-align: center;
+}
+
+
+.wrapper{
+  position: auto;
+  height: 100%auto;
+  width: 100%auto;
+
+}
+.wrapper.active{
+  border: none;
+    width: auto;
+}
+.wrapper .image{
+  position: auto;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wrapper img{
+  height:768px ;
+  width:  1280px ;
+  object-fit: fill;
+}
+.wrapper .icon{
+  font-size: 100px;
+  width: auto;
+  color: #9658fe;
+}
+.wrapper .text{
+    width: auto;
+  font-size: 20px;
+  font-weight: 500;
+  color: #5B5B7B;
+}
+.wrapper #cancel-btn {
+  font-family: 'Open Sans', sans-serif;
+  width: auto;
+  position: absolute;
+  font-size: 20px;
+  right: 15px;
+  top: 15px;
+  color: #019A3F;
+  cursor: pointer;
+  display: none;
+}
+.wrapper.active:hover #cancel-btn i{
+  width: auto;
+  display: block;
+}
+.wrapper #cancel-btn i:hover{
+  color:#019A3F;
+}
+.wrapper .file-name{
+  position: fixed;
+  bottom: 0px;
+  width:  1280px;
+  padding: 8px 0;
+  font-size: 18px;
+  color: #fff;
+  display: none;
+  background: linear-gradient(#019A3F 50%,#019A3F 100%);
+}
+.wrapper.active:hover .file-name{
+  display: block;
+
+}
+.wrapper #custom-btn{
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  display: none;
+  width: 400px;
+  height: 50px;
+  border: 20px;
+  outline:20px;
+  border-radius: 20px;
+  color: #fff;
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  background: #019A3F;
+}
+.wrapper.active:hover #custom-btn {
+  display: block;
+
+}
+/* Style the form */
+#regForm {
+  background-color: #ffffff;
+  margin: 100px auto;
+  padding: 40px;
+  width: 70%;
+  min-width: 300px;
+
+
+}
+
+/* Style the input fields */
+input {
+    font-family: 'Open Sans', sans-serif;
+  padding: 10px;
+  width: 100%;
+  font-size: 17px;
+  font-family: Raleway;
+  border: 1px solid #aaaaaa;
+}
+
+/* Mark input boxes that gets an error on validation: */
+input.invalid {
+  background-color: #ffdddd;
+}
+
+/* Hide all steps by default: */
+.tab {
+  display: none;
+}
+
+/* Make circles that indicate the steps of the form: */
+.step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+/* Mark the active step: */
+.step.active {
+  opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+  background-color: #04AA6D;
+}

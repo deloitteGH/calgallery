@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+
+<html lang="en" dir="ltr">
+   <head>
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+      <meta charset="utf-8">
+      <title>Crestron Room Panel Images</title>
+      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+   </head>
+   <body>
+     <link href='https://fonts.googleapis.com/css?family=Oswald:400' rel='stylesheet' type='text/css'>
+ <div class="wrapper">
+            <div class="image">
+               <img src="" alt="" onerror="this.src='logo.jpg';">
+            </div>
+
+
+            <div class="file-name">
+              Crestron Room Panel Images
+            </div>
+
+
+
+            <button onclick="window.location.href='https://ghgallery.netlify.app/';" id="custom-btn">
+            Set Timer and choose a picture
+
+          </button>
+            <input id="default-btn" type="file" hidden>
+         </div>
+
+
+
+
+
+      <script>
+         const wrapper = document.querySelector(".wrapper");
+         const fileName = document.querySelector(".file-name");
+         const defaultBtn = document.querySelector("#default-btn");
+         const customBtn = document.querySelector("#custom-btn");
+         const cancelBtn = document.querySelector("#cancel-btn i");
+         const img = document.querySelector("img");
+         let regExp = /[0-9a-zA-Z\^\&\'\@\{\}\[\]\,\$\=\!\-\#\(\)\.\%\+\~\_ ]+$/;
+         wrapper.classList.add("active");
+         function defaultBtnActive(){
+           defaultBtn.click();
+         }
+         defaultBtn.addEventListener("change", function(){
+           const file = this.files[0];
+           if(file){
+             const reader = new FileReader();
+             reader.onload = function(){
+               const result = reader.result;
+               img.src = result;
+               wrapper.classList.add("active");
+             }
+
+
+             reader.readAsDataURL(file);
+           }
+           if(this.value){
+             let valueStore = this.value.match(regExp);
+             fileName.textContent = valueStore;
+           }
+         });
+
+
+      </script>
+
+   </body>
+</html>
